@@ -24,7 +24,7 @@
 //console.log(ht.innerHTML);
 //var h=document.getElementById("main-header");
 //h.style.borderBottom='solid red 5px'
-
+console.dir(document)
 
 
 

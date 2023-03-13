@@ -11,21 +11,30 @@ function addit(e){
     
     var inpt=document.getElementById("item").value
 
+    var inpt2=document.getElementById("item1").value
+
     var netm=document.createElement("li");
 
     netm.className="list-group-item";
 
    
 
-    netm.appendChild(document.createTextNode(inpt));
+    netm.appendChild(document.createTextNode(inpt+" "+inpt2));
+    var ed=document.createElement("button")
+    ed.className='btn btn-light btn-sm float-right';
+
+    ed.appendChild(document.createTextNode("Edit"))
+    
+
 
     var dele=document.createElement("button")
 
     dele.className="btn btn-danger btn-sm float-right delete";
 
-    dele.appendChild(document.createTextNode('x'))
+    dele.appendChild(document.createTextNode('X'))
 
     netm.appendChild(dele);
+    netm.appendChild(ed);
 
     list.appendChild(netm)
     

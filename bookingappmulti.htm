@@ -14,7 +14,7 @@
             background-size: cover;
         }
 
-       
+
 
         .l {
             border: 1px;
@@ -37,7 +37,7 @@
             margin-right: 25%;
             display: block;
             background-color: rgba(17, 17, 207, 0.2);
-           
+
 
 
         }
@@ -47,21 +47,23 @@
             height: 25px;
             border-radius: 6px;
         }
+
         input[type=submit] {
             width: 100%;
             height: 25px;
             border-radius: 6px;
             background-color: rgb(13, 233, 13);
         }
-        .f{
+
+        .f {
             width: 49%;
             height: 25px;
             border-radius: 6px;
         }
-        label{
+
+        label {
             font-size: 22px;
         }
-        
     </style>
 </head>
 
@@ -74,22 +76,25 @@
             <h1 style="color: green align-items: center;">Book a Call</h1>
             <h3>Book a call slot and our representative will call you within 1 hour of selected time.</h3>
         </div>
-        <hr width="100%">
+        <hr width="99%" color="red">
 
         <div style="align-items: left;">
 
             <form action="#" onsubmit="signup()">
                 <label for="1">Name:</label><br>
-                <input type="text" id="1" class="c"><br><br>
+                <input type="text" id="1" class="c" required><br><br>
                 <label for="2">Email:</label><br>
-                <input type="text" id="2" class="c"><br><br>
+                <input type="text" id="2" class="c" required><br><br>
                 <label for="3">Phone:</label><br>
-                <input type="text" id="3" class="c"><br><br>
+                <input type="text" id="3" class="c" required><br><br>
                 <label for="4"> Time for Call:</label><br><br>
-                <input type="date" id="4" class="f">
-                <input type="time" id="5" class="f"> <br><br>
+                <input type="date" id="4" class="f" required>
+                <input type="time" id="5" class="f" required> <br><br>
                 <input type="submit" value="GET A CALL" style="font-size: 20px;">
             </form>
+            <ul class="show">
+                
+            </ul>
         </div>
     </div>
     <script>
@@ -104,15 +109,30 @@
             // console.log(Phone);
             // console.log(date);
             // console.log(t);
-            const user={name:Name,email:Email,phone:Phone,Date:date,Time:t};
-            const userstr=JSON.stringify(user);
-            localStorage.setItem(Email,userstr);
+            const user = { name: Name, email: Email, phone: Phone, Date: date, Time: t };
+            const userstr = JSON.stringify(user);
+            localStorage.setItem(Email, userstr);
             // localStorage.setItem('Name',Name)
             // localStorage.setItem('Email',Email)
             // localStorage.setItem('Phone',Phone)
             // localStorage.setItem('Date',date)
             // localStorage.setItem('Time',t)
+            const r=document.querySelector(".show");
+            const ct=document.createElement("li");
+
+            let str=Name+"-"+Email+"-"+Phone;
+            ct.textContent=str;
+            let del=document.createElement("input");
+            del.type="button";
+            del.value="Delete";
+            del.onclick=()=>{
+                localStorage.removeItem(Email);
+                r.removeChild(ct);
+            }
+            ct.appendChild(del);
+            r.appendChild(ct);
         }
+
     </script>
 
 </body>

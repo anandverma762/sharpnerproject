@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,68 +11,107 @@
             background-image: url(1.jpg);
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-size:cover;
+            background-size: cover;
         }
-       #h {
-            color: rgba(38, 201, 5, 0.473);
-            margin-top: 40px;
-            margin-left: 40px;
-            text-decoration: underline black;
-            font-size: x-large;
-        }
+
+       
+
         .l {
             border: 1px;
             border-color: green;
 
         }
+
         .b {
-            border-block: 2px solid rgb(5, 238, 44);
-            border-left: 50px; 
+            border: 2px solid rgb(5, 238, 44);
+            /* border-left: 49px; */
             /* margin-left: 100px; */
             border-radius: 8px;
+            margin-left: 20%;
+            margin-right: 25%;
+        }
+
+        .flexbox {
+            display: flex;
+            margin-left: 22%;
+            margin-right: 25%;
+            display: block;
+            background-color: rgba(17, 17, 207, 0.2);
+           
+
 
         }
+
+        input[type=text] {
+            width: 99%;
+            height: 25px;
+            border-radius: 6px;
+        }
+        input[type=submit] {
+            width: 100%;
+            height: 25px;
+            border-radius: 6px;
+            background-color: rgb(13, 233, 13);
+        }
+        .f{
+            width: 49%;
+            height: 25px;
+            border-radius: 6px;
+        }
+        label{
+            font-size: 22px;
+        }
+        
     </style>
 </head>
-<body >
+
+<body>
     <!-- <div id="h">YAV</div> -->
     <!-- <div class="l">Schedule a Call</div> -->
     <!-- <div class="l">Hire with Us</div> -->
-    <div class="b">
-        <div align="center">
-    <h1 style="color: green;">Book a Call</h1>
-    <h3 >Book a call slot and our representative will call you within 1 hour of selected time.</h3>
-    <hr width="60%">
+    <div class="flexbox b">
+        <div style="text-align: center;">
+            <h1 style="color: green align-items: center;">Book a Call</h1>
+            <h3>Book a call slot and our representative will call you within 1 hour of selected time.</h3>
+        </div>
+        <hr width="100%">
+
+        <div style="align-items: left;">
+
+            <form action="#" onsubmit="signup()">
+                <label for="1">Name:</label><br>
+                <input type="text" id="1" class="c"><br><br>
+                <label for="2">Email:</label><br>
+                <input type="text" id="2" class="c"><br><br>
+                <label for="3">Phone:</label><br>
+                <input type="text" id="3" class="c"><br><br>
+                <label for="4"> Time for Call:</label><br><br>
+                <input type="date" id="4" class="f">
+                <input type="time" id="5" class="f"> <br><br>
+                <input type="submit" value="GET A CALL" style="font-size: 20px;">
+            </form>
+        </div>
     </div>
-    <div style="align-items: left;">
-    <form action="#" onsubmit="signup()">
-        <label for="1">Name:</label><br>
-         <input type="text" id="1" width="100%" ><br><br>
-        <label for="2">Email:</label><br>
-        <input type="text" id="2"><br><br>
-        <label for="3">Phone:</label><br>
-      <input type="text" id="3"><br><br>
-        <label for="4"> Time for Call:</label><br><br>
-        <input type="date" id="4">
-        <input type="time" id="5"> <br><br>
-        <input type="submit" value="GET A CALL">
-    </form>
-</div>
-</div>
-<script>
-    function signup(){
-       let Name =document.getElementById("1").value;
-       let Email =document.getElementById("2").value;
-       let Phone =document.getElementById("3").value;
-       let date =document.getElementById("4").value;
-       let t =document.getElementById("5").value;
-       console.log(Name);
-       console.log(Email);
-       console.log(Phone);
-       console.log(date);
-       console.log(t);
-    }
-</script>
-    
+    <script>
+        function signup() {
+            let Name = document.getElementById("1").value;
+            let Email = document.getElementById("2").value;
+            let Phone = document.getElementById("3").value;
+            let date = document.getElementById("4").value;
+            let t = document.getElementById("5").value;
+            // console.log(Name);
+            // console.log(Email);
+            // console.log(Phone);
+            // console.log(date);
+            // console.log(t);
+            localStorage.setItem('Name',Name)
+            localStorage.setItem('Email',Email)
+            localStorage.setItem('Phone',Phone)
+            localStorage.setItem('Date',date)
+            localStorage.setItem('Time',t)
+        }
+    </script>
+
 </body>
+
 </html>

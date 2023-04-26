@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDOwithCrud</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="todo.js"></script>
+
+</head>
+<body>
+    <div class="text-center text-warning bg-dark">
+        <h1>ToDOwithCrud</h1>
+    </div>
+    <form action="#" onsubmit="sent()">
+        
+            
+            <label for="1" class="form-label"><h4>
+                ToDo Name
+            </h4></label>
+            <input type="text" id="1" class="form-control-sm">
+            <label for="2" class="form-label"><h4>Description</h4></label>
+            <input type="text" id="2" class="form-control-sm">
+            <input type="submit" value="ADD" class="btn btn-success">
+        
+    </form>
+    <div class="container mt-5" id="r">
+        <h2>ToDo's Remaining</h2>
+        <ol class="list-group rem"></ol>
+    </div>
+    <div class="container mt-5" id="d">
+        <h2>ToDo's Done</h2>
+        <ol class="list-group dn"></ol>
+    </div>
+
+</body>
+</html>
